@@ -29,7 +29,7 @@ async def main():
 #    loop = asyncio.get_event_loop()
 
     on_con_lost = loop.create_future()
-    message = ('\x15' '@MA' '@F0' '@Y0' '@h' '@l' '\x16')
+    message = ('@\x15' '@MA' '@F0' '@Y0' '@h' '@l' '@\x16')
 
     transport, protocol = await loop.create_connection(
         lambda: ClientProtocol(message, on_con_lost),
